@@ -22,6 +22,7 @@ public:
 
     void update( );
     void keyManager( unsigned char key, bool isup );
+    void resize( int width, int height );
     
 private:
     
@@ -30,7 +31,13 @@ private:
     bool a_ready = false;
     bool a_keys[255];
     
-    Triangle a_tri;
+    int a_screenWidth;
+    int a_screenHeight;
+    
+    float r_left;
+    float r_right;
+    float r_top;
+    float r_bottom;
 
 };
 

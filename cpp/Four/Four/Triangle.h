@@ -19,8 +19,6 @@ public:
     ~Triangle( );
     
     void render( );
-    
-private:
     vertex t_verts[3];
     
 };

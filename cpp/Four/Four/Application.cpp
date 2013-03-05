@@ -6,7 +6,7 @@
  * Copyright 2013 under the MIT liscense     *
  * ***************************************** */
 #include "Application.h"
-int Application::init(int argc, char *argv[] ) {
+int Application::init( int argc, char *argv[] ) {
 
     glutInit( &argc, argv );
     
@@ -16,10 +16,12 @@ int Application::init(int argc, char *argv[] ) {
     
     glutCreateWindow( "Program Four" );
     
+    /* attatch the event callbacks */
     glutIdleFunc( update );
     glutDisplayFunc( update );
     glutKeyboardFunc( keyDown );
     glutKeyboardUpFunc( keyUp );
+    glutReshapeFunc( resize );
     
     glClearColor(0.0, 0.0, 0.0, 0.0);
     
@@ -32,6 +34,7 @@ int Application::init(int argc, char *argv[] ) {
     return 0;
 }
 void Application::update() { app->update(); }
+void Application::resize( int width, int height ) { app->resize( width, height ); }
 void Application::keyDown( unsigned char key, int x, int y ) { app->keyManager( key , true ); }
 void Application::keyUp( unsigned char key, int x, int y ) { app->keyManager( key, false ); }
 

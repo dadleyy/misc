@@ -21,6 +21,7 @@ namespace Application {
     void update( );
     void keyDown( unsigned char key, int x, int y );
     void keyUp( unsigned char key, int x, int y );
+    void resize( int width, int height );
   
     static App *app;
 };
