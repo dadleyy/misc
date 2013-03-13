@@ -1,3 +1,4 @@
+/* */
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -10,11 +11,10 @@
 #include "rapidjson/prettywriter.h"	// for stringify JSON
 
 
-
 using namespace std;
 
 struct Vertex {
-    float x, y, z;
+    float x, y, z, n;
 };
 
 namespace parsers {
@@ -44,6 +44,15 @@ namespace parsers {
         v.z = atof( _nums[2].c_str( ) );
         
         return v;
+    }
+    
+    void ParseFaceString( string line, int *inSet ) {
+        string _vals = line.substr( 2, line.length() - 2 );
+        vector<string> _sets = split( _vals, ' ' );
+        for ( int i = 0; i < 3; i ++ ) {
+            string ind = _sets[i].substr( 0, 1 );
+            inSet[i] = atoi( ind.c_str( ) );
+        }
     }
 }
 
@@ -88,14 +97,22 @@ int main(int argc, const char *argv[]) {
     }
     cout << "+- Successfully opened the output file" << endl;
     
+    
+    /* initialize variables that will update for each line */
     string _line = "",
            _flag = "";
     
+    /* keep track of verts and indices */
     int vcount = 0,
         icount = 0;
     
+    vector<Vertex> _verts;
+    vector<int> _indices;
+    
     /* loop through the file */
     while ( getline( _reader, _line ) ) {
+        
+        /* the first two chars of the line tell us what kind of thing it is */
         _flag = { _line[0], _line[1] };
         
         /* Start checking the first letter
@@ -105,13 +122,18 @@ int main(int argc, const char *argv[]) {
         /* vertex definition "x.xxx y.yyy z.zzz" */
         if( _flag == "v " ) {
             Vertex v = parsers::ParseVertexString( _line );
+            _verts.push_back( v );
             cout << "~ Vertex: (" << v.x << " , " << v.y << " , " << v.z << " ) " << endl;
             vcount++;
         }
         /* face definition (indices for DirectX) */
         else if ( _flag == "f " ) {
-         
-            icount ++;
+            int face[3] = { 0, 0, 0 };
+            parsers::ParseFaceString( _line, face );
+            for ( int z = 0; z < 3; z++ ) {
+                _indices.push_back( face[z] );
+                icount ++;
+            }
         }
         /* vertext texture coordinates */
         else if ( _flag == "vt" ) {
@@ -126,10 +148,71 @@ int main(int argc, const char *argv[]) {
         
         _flag = "";
     }
-    cout << "- found [ " << vcount << " ] vertices" << endl;
+    cout << "~ indices order: " << endl << "~ ";
+    for ( int i = 1; i <= _indices.size(); i++ ) {
+        cout << _indices[i-1] << " ";
+        if ( (i % 10) == 0 ) { cout << endl << "~ "; }
+    }
+    cout << endl;
+    
+    cout << "- found [ " << vcount << " ] vertices : " << _verts.size() << endl;
+    cout << "- found [ " << icount << " ] indices : " << _indices.size() << endl;
     
     /* start the json output */
-    _writer << "{ \n \"version\" : \"1.0\" \n ";
+    _writer << "{ \n \"version\" : \"1.0\", \n";
+    
+    /* write the vertices out */
+    _writer << " \"vertices\" : [ ";
+    
+    for ( int i = 0; i < _verts.size(); i++ ) {
+        string _vstring = " { \"x\" : \"";
+        
+        std::ostringstream ss;
+        
+        /* add the x value */
+        ss << _verts[i].x;
+        _vstring.append( ss.str() );
+        _vstring.append( "\"," );
+        
+        ss.str("");
+        ss.clear();
+        
+        /* add the y value */
+        ss << _verts[i].y;
+        _vstring.append( "\"y\" : \"" );
+        _vstring.append( ss.str() );
+        _vstring.append( "\"," );
+        
+        ss.str("");
+        ss.clear();
+        
+        /* add the z value */
+        ss << _verts[i].z;
+        _vstring.append( "\"z\":\"" );
+        _vstring.append( ss.str() );
+        _vstring.append( "\"" );
+        
+        ss.str("");
+        ss.clear();
+        
+        /* close the string */
+        _vstring.append( " }");
+        if ( i != _verts.size() - 1 ) { _vstring.append(","); }
+        
+        _writer << _vstring;
+    }
+    
+    _writer << " ], \n";
+    
+    _writer << " \"indices\" : [ ";
+    
+    for ( int i = 0; i < _indices.size(); i++ ) {
+        _writer << _indices[i];
+        if ( i != _indices.size() - 1 ) { _writer << ","; }
+    }
+    
+    _writer << " ] \n";
+    
     /* close the json output */
     _writer << "}";
     
