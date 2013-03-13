@@ -1,0 +1,102 @@
+TOBJtoJSON
+v5
+r1
+cCheck dependencies
+cCompileC DerivedData/OBJtoJSON/Build/Intermediates/OBJtoJSON.build/Debug/OBJtoJSON.build/Objects-normal/x86_64/main.o /Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/OBJtoJSON/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Products/Debug/OBJtoJSON normal x86_64
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
+c00000000503F1B7700000000000000AA
+t1346313079
+s170
+
+N/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Intermediates/OBJtoJSON.build/Debug/OBJtoJSON.build/Objects-normal/x86_64/OBJtoJSON.LinkFileList
+c00000000513FE33C00000000000000B5
+t1363141436
+s181
+
+N/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Intermediates/OBJtoJSON.build/Debug/OBJtoJSON.build/Objects-normal/x86_64/main.o
+t1363148596
+s443340
+
+N/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Products/Debug/OBJtoJSON
+t1363148596
+s165704
+
+N/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/OBJtoJSON/main.cpp
+c00000000513FFF780000000000001092
+t1363148664
+s4242
+i<iostream>
+i<fstream>
+
+N/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/OBJtoJSON/rapidjson/document.h
+c0000000050A6F544000000000000732F
+t1353119044
+s29487
+
+N/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/OBJtoJSON/rapidjson/internal/pow10.h
+c000000004F4D06B0000000000000138D
+t1330448048
+s5005
+
+N/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/OBJtoJSON/rapidjson/internal/stack.h
+c000000004F4D19980000000000000934
+t1330452888
+s2356
+
+N/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/OBJtoJSON/rapidjson/internal/strfunc.h
+c000000004F4D06B000000000000002A8
+t1330448048
+s680
+
+N/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/OBJtoJSON/rapidjson/prettywriter.h
+c0000000050A2B69800000000000014C1
+t1352840856
+s5313
+
+N/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/OBJtoJSON/rapidjson/rapidjson.h
+c0000000050A6D73200000000000042AF
+t1353111346
+s17071
+
+N/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/OBJtoJSON/rapidjson/reader.h
+c0000000050A2B886000000000000505F
+t1352841350
+s20575
+
+N/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/OBJtoJSON/rapidjson/writer.h
+c0000000050A3B1A20000000000001B5D
+t1352905122
+s7005
+
+CBuild AST from /Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/OBJtoJSON/main.cpp
+r0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies56d470f936f0b641^eb3872f936f0b641^---0#1#0#--18"Check dependencies36"C3831B1C-23EE-490A-B7BB-498DDBA90B72-
+
+CCompileC DerivedData/OBJtoJSON/Build/Intermediates/OBJtoJSON.build/Debug/OBJtoJSON.build/Objects-normal/x86_64/main.o /Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/OBJtoJSON/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s384841465.444565
+e384841466.429208
+r1
+xCompileC
+xDerivedData/OBJtoJSON/Build/Intermediates/OBJtoJSON.build/Debug/OBJtoJSON.build/Objects-normal/x86_64/main.o
+x/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/OBJtoJSON/main.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Compile /Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/OBJtoJSON/main.cppd3f871f936f0b641^b5e06dfa36f0b641^---0#0#0#-19%DVTDocumentLocation2@106"file://localhost/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/OBJtoJSON/main.cpp0000000000000000^3605"CompileC DerivedData/OBJtoJSON/Build/Intermediates/OBJtoJSON.build/Debug/OBJtoJSON.build/Objects-normal/x86_64/main.o OBJtoJSON/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Intermediates/OBJtoJSON.build/Debug/OBJtoJSON.build/OBJtoJSON-generated-files.hmap -I/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Intermediates/OBJtoJSON.build/Debug/OBJtoJSON.build/OBJtoJSON-own-target-headers.hmap -I/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Intermediates/OBJtoJSON.build/Debug/OBJtoJSON.build/OBJtoJSON-all-target-headers.hmap -iquote /Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Intermediates/OBJtoJSON.build/Debug/OBJtoJSON.build/OBJtoJSON-project-headers.hmap -I/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Products/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Intermediates/OBJtoJSON.build/Debug/OBJtoJSON.build/DerivedSources/x86_64 -I/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Intermediates/OBJtoJSON.build/Debug/OBJtoJSON.build/DerivedSources -F/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Products/Debug -MMD -MT dependencies -MF /Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Intermediates/OBJtoJSON.build/Debug/OBJtoJSON.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Intermediates/OBJtoJSON.build/Debug/OBJtoJSON.build/Objects-normal/x86_64/main.dia -c /Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/OBJtoJSON/main.cpp -o /Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Intermediates/OBJtoJSON.build/Debug/OBJtoJSON.build/Objects-normal/x86_64/main.o36"0317D68D-3E03-4503-AE40-5F7616738E56-
+
+CLd /Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Products/Debug/OBJtoJSON normal x86_64
+s384841466.436231
+e384841466.462299
+r1
+xLd
+x/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Products/Debug/OBJtoJSON
+xnormal
+xx86_64
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection129"Link /Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Products/Debug/OBJtoJSONebc66ffa36f0b641^4b5976fa36f0b641^---0#0#0#--1021"Ld DerivedData/OBJtoJSON/Build/Products/Debug/OBJtoJSON normal x86_64    cd /Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON    setenv MACOSX_DEPLOYMENT_TARGET 10.7    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Products/Debug -F/Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Products/Debug -filelist /Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Intermediates/OBJtoJSON.build/Debug/OBJtoJSON.build/Objects-normal/x86_64/OBJtoJSON.LinkFileList -mmacosx-version-min=10.7 -stdlib=libc++ -o /Users/danielhadley/Documents/_GITREPO/misc/oddjobs/OBJtoJSON/OBJtoJSON/DerivedData/OBJtoJSON/Build/Products/Debug/OBJtoJSON36"503F6EA2-06DB-46F4-BA56-E8BA6912E991-
+
