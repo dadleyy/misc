@@ -76,6 +76,12 @@ int main(int argc, const char *argv[]) {
         return 0;
     }
     
+    /* check the input file type */
+    if( _inFileN.substr( _inFileN.find_last_of(".") + 1) != "obj" ) {
+        cout << "!- Input file must be a .obj extention" << endl;
+        return 0;
+    }
+    
     ifstream _reader;
     ofstream _writer;
     
@@ -211,7 +217,12 @@ int main(int argc, const char *argv[]) {
         if ( i != _indices.size() - 1 ) { _writer << ","; }
     }
     
-    _writer << " ] \n";
+    _writer << " ], \n";
+    
+    /* write the counts out just for convenience */
+    _writer << " \"indices_count\" : \"" << icount << "\", \n";
+    _writer << " \"vertices_count\" : \"" << vcount << "\" \n";
+    
     
     /* close the json output */
     _writer << "}";
