@@ -5,14 +5,27 @@
 #define _JPM_CONNECTION_H
 
 #include "../include/curl/curl.h"
+#include "jpm.h"
 
 class JPMConnection {
     
 public:
     JPMConnection( );
+    JPMConnection(string serverinfo);
     ~JPMConnection( );
+    
+    int Push( char* filename );
+    
+    void set_password( string _password );
+    void set_username( string _username );
+    void set_port( unsigned int _port );
+    
 private:
-    CURL *curl;
+    string desturl;
+    string username;
+    string password;
+    unsigned int port;
+    
 };
 
 #endif

@@ -1,0 +1,8 @@
+{
+    "server" : { 
+        "method" : "sftp",
+        "url" : "sizethreestudios.com",
+        "user" : "sizethre",
+        "password" : "S3Studios2011"
+    }
+}

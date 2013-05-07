@@ -4,19 +4,15 @@
 #ifndef _JPM_H
 #define _JPM_H
 
-#define JPM_ERR "need help?\n  type --help for more options\n  thank you or using jpm\n\n"
-#define JPM_WELCOME "\nwelcome to jpm\n"
-#define JPM_HELP "list of available flags:\n  -o : the output file\n\n"
-
+#include "defs.h"
+#include "includes.h"
 #include "jpm-connection.h"
-#include <iostream>
-using namespace std;
+#include "jpm-parser.h"
 
 class JPM {
 
 public:
     static int execute(int argc, char* argv[ ]); 
-private:
     static int print(string message);
 
 public:
@@ -28,8 +24,11 @@ public:
     void set_outfile(string filen);
     void set_infile(string filen);
     void set_server(string serveri);
+    bool ready;
     
 private:
+    void CheckReady( );
+    
     string outfile;
     string infile;
     
