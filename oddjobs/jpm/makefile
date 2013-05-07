@@ -1,18 +1,20 @@
 PROGRAM = jpm
 CC = g++
 CFLAGS = -I.
-DEPS = src/jpm.h
-OBJDIR = obj
-CPPDIR = src
 
-all: $(OBJDIR)/*.o
+OBJDIR = obj
+SRCDIR = src
+
+DEPS = obj/jpm.o \
+	   obj/jpm-connection.o
+
+all:
 
 clean: 
 	@rm -rf $(OBJDIR)/*.o
 	
-$(OBJDIR)/%.o: $(CPPDIR)/*.cpp $(CPPDIR)/*.h
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp $(SRCDIR)/%.h
 	$(CC) -c -o $@ $< $(CFLAGS)
 	
-$(PROGRAM): $(OBJDIR)/*.o
-	@rm $(PROGRAM)
-	$(CC) -o $@ $(CPPDIR)/main.cpp $(CFLAGS) $^
+$(PROGRAM): $(DEPS)
+	$(CC) -o $@ $(SRCDIR)/main.cpp $(CFLAGS) $^
