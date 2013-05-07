@@ -5,14 +5,15 @@
 #define _JPM_PARSER_H
 
 #include "jpm.h"
+class JPM;
 
 class JPMParser {
 
 public:
-    JPMParser( );
-    ~JPMParser( );
+    static void FromPackage( JPM* outman );
     
 private: 
+    
     
 };
 

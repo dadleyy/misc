@@ -1,7 +1,9 @@
 #include "jpm-connection.h"
 
-JPMConnection::JPMConnection( ) { }
-JPMConnection::JPMConnection( string serverinfo ) { }
+JPMConnection::JPMConnection( ) : handle(0) { }
+JPMConnection::JPMConnection( string serverinfo ) : handle(0) {  
+    
+}
 JPMConnection::~JPMConnection( ) { }
 
 // setters

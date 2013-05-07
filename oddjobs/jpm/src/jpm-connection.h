@@ -25,6 +25,7 @@ private:
     string username;
     string password;
     unsigned int port;
+    CURL* handle;
     
 };
 

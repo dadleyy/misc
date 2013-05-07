@@ -12,14 +12,14 @@
 class JPM {
 
 public:
-    static int execute(int argc, char* argv[ ]); 
-    static int print(string message);
-
+    static int Execute(int argc, char* argv[ ]); 
+    static int Print(string message);
+    
 public:
     JPM( );
     ~JPM( );
     
-    int run( );
+    int Run( string command );
     
     void set_outfile(string filen);
     void set_infile(string filen);
@@ -28,6 +28,9 @@ public:
     
 private:
     void CheckReady( );
+    
+    int Compile( );
+    int Upload( );
     
     string outfile;
     string infile;
