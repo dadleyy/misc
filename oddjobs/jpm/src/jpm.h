@@ -6,36 +6,35 @@
 
 #include "defs.h"
 #include "includes.h"
-#include "jpm-connection.h"
-#include "jpm-parser.h"
 
 class JPM {
 
 public:
     static int Execute(int argc, char* argv[ ]); 
-    static int Print(string message);
+    static int Print( std::string message );
     
 public:
     JPM( );
     ~JPM( );
     
-    int Run( string command );
+    int Run( std::string command );
     
-    void set_outfile(string filen);
-    void set_infile(string filen);
-    void set_server(string serveri);
+    void set_outfile( std::string filen );
+    void set_infile( std::string filen );
+    void set_server( std::string serveri );
+    
+    std::string get_outfile( );
+    std::string get_infile( );
+    
     bool ready;
     
 private:
     void CheckReady( );
     
-    int Compile( );
-    int Upload( );
+    std::string outfile;
+    std::string infile;
     
-    string outfile;
-    string infile;
-    
-    string serverinfo;
+    std::string serverinfo;
     bool usingserver;
 };
 

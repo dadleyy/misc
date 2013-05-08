@@ -2,6 +2,9 @@
  * Date: Spring 2013
 */
 #include "jpm.h"
+#include "jpm-compiler.h"
+#include "jpm-connection.h"
+#include "jpm-parser.h"
 
 // //////////////////// //
 // JPM CLASS FUNCTIONS  //
@@ -10,15 +13,16 @@ JPM::JPM( ) : outfile("out.js"), infile(""), usingserver(false), ready(false) {
 }
 JPM::~JPM( ) { }
 
-/* jpm getters and setters
-*/
-void JPM::set_outfile(string filen){ outfile = filen; CheckReady( ); }
-void JPM::set_infile(string filen){ infile = filen; CheckReady( ); }
-void JPM::set_server(string serveri){
+// jpm getters and setters
+void JPM::set_outfile(std::string filen){ outfile = filen; CheckReady( ); }
+void JPM::set_infile(std::string filen){ infile = filen; CheckReady( ); }
+void JPM::set_server(std::string serveri){
     serverinfo = serveri;
     usingserver = true;
     CheckReady( );
 }
+std::string JPM::get_outfile( ){ return outfile; }
+std::string JPM::get_infile( ){ return infile; }
 
 /* jpm.CheckReady
  * checks to see if the manager has all the necessary info
@@ -34,18 +38,14 @@ void JPM::CheckReady( ){
  * accepts a string and runs it as a command
  * @param {string} command 
 */
-int JPM::Run( string command ) {
+int JPM::Run( std::string command ) {
     if( command == "compile" )
-        return Compile( );
+        return JPMCompiler::Compile( this );
     else if( command == "upload" )
-        return Upload( );
+        return 1;
     else
         return 1;
 }
-
-int JPM::Compile( ) { }
-int JPM::Upload( ) { }
-
 
 // ///////////////////// //
 // JPM STATIC FUNCTIONS  //
@@ -62,22 +62,24 @@ int JPM::Execute( int argc, char* argv[ ] ){
     // make sure at least the input was passed in
     if( argc < 2 )
         return JPM::Print( JPM_ERR_NOARG );
-    
-    // grab the first agument
-    string command = argv[1];
-    if( command == "init" )
-        man = JPM( );
-    else 
-        JPMParser::FromPackage( &man );
 
+    // grab the first agument
+    std::string command = argv[1];
+    if( command == "init" ){
+        
+    } else {
+        JPMParser::FromPackage( &man );
+    }
+    
+    JPMCompiler::Prepare( );
     return man.Run( command );
 }
 
 /* JPM::Print
  * writes out a message to the console
 */
-int JPM::Print(string msg){
-    cout << msg << endl;
+int JPM::Print( std::string msg ){
+    std::cout << msg << std::endl;
     return 0;
 }
 

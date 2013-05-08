@@ -1,5 +1,3 @@
-(function ( ) {
-    
-import "other";
-    
-})( );
+(function ( ){
+     
+});

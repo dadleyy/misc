@@ -5,12 +5,14 @@
 #define _JPM_PARSER_H
 
 #include "jpm.h"
-class JPM;
+#include "jpm-compiler.h"
+#include <sstream>
+#include <rapidjson/document.h>
 
 class JPMParser {
 
 public:
-    static void FromPackage( JPM* outman );
+    static int FromPackage( JPM* outman );
     
 private: 
     

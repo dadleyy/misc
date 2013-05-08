@@ -4,26 +4,26 @@
 #ifndef _JPM_CONNECTION_H
 #define _JPM_CONNECTION_H
 
-#include "../include/curl/curl.h"
-#include "jpm.h"
+#include "includes.h"
+#include <curl/curl.h>
 
 class JPMConnection {
     
 public:
     JPMConnection( );
-    JPMConnection(string serverinfo);
+    JPMConnection(std::string serverinfo);
     ~JPMConnection( );
     
     int Push( char* filename );
     
-    void set_password( string _password );
-    void set_username( string _username );
+    void set_password( std::string _password );
+    void set_username( std::string _username );
     void set_port( unsigned int _port );
     
 private:
-    string desturl;
-    string username;
-    string password;
+    std::string desturl;
+    std::string username;
+    std::string password;
     unsigned int port;
     CURL* handle;
     

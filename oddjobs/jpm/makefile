@@ -1,6 +1,6 @@
 PROGRAM = jpm
 CC = g++
-CFLAGS = -I. -L/usr/local/lib -lcurl
+CFLAGS = -I. -L./lib/curl -I./include
 OBJDIR = obj
 SRCDIR = src
 SRCFILES := $(filter-out $(SRCDIR)/main.cpp, $(wildcard src/*.cpp))
@@ -13,7 +13,7 @@ clean:
 	@rm -rf $(OBJDIR)/*.o
 	
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp $(SRCDIR)/%.h
-	$(CC) -c -o $@ $< 
+	$(CC) -c -o $@ $(CFLAGS) $< 
 	
 $(PROGRAM): $(OBJFILES)
 	$(CC) -o $@ $(CFLAGS) $^ $(SRCDIR)/main.cpp
