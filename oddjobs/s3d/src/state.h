@@ -6,9 +6,6 @@
 class State {
 
 public:
-    State( );
-    ~State( );
-    
     virtual void Update( float dt ) = 0;
     virtual void Draw( ) = 0;
     

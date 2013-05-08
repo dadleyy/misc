@@ -5,6 +5,8 @@
 #include "state.h"
 #include <sstream>
 
+class Player;
+
 class GameState : public State {
 
 public:
@@ -16,7 +18,7 @@ public:
     
 private:
     float alpha;
-    
+    Player* player;
 };
 
 #endif

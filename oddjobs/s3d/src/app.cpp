@@ -1,6 +1,8 @@
 #include "app.h"
 
 App* instance;
+bool keystates[256];
+
 void G_Update( ){
     instance->c_time = time(0) * 1000.0f;
     long dt = instance->c_time - instance->l_time;
@@ -9,10 +11,18 @@ void G_Update( ){
     instance->Update( (float)dt );
 }
 
-void G_RESIZE( int width, int height ){
+void G_Resize( int width, int height ){
     instance->set_window_height( height );
     instance->set_window_width( width );
     instance->Resize( );
+}
+
+void G_Keyman( unsigned char key, int x, int y ){
+    keystates[ (int)key ] = true;
+}
+
+void G_Keyup( unsigned char key, int x, int y ){
+    keystates[ (int)key ] = false;
 }
 
 // Constructor
@@ -27,7 +37,6 @@ App::App( int argc, char* argv[ ] ) : window_height(600), window_width(800), l_t
     glutCreateWindow( "S3D" );
     glClearColor( 0.33f, 0.33f, 0.33f, 1.0f );
     glEnable( GL_DEPTH_TEST );
-    std::cout << "finished init" << std::endl;
     
     instance = this;
 }
@@ -37,9 +46,10 @@ void App::set_window_width( int width ) { window_width = width; }
 
 // App.Run
 int App::Run( ){
-    std::cout << "starting run" << std::endl;
     glutDisplayFunc( G_Update );
-    glutReshapeFunc( G_RESIZE );
+    glutReshapeFunc( G_Resize );
+    glutKeyboardFunc( G_Keyman );
+    glutKeyboardUpFunc( G_Keyup );
     Resize( );
     //glutIdleFunc( G_Update );
     glutMainLoop( );
@@ -55,7 +65,6 @@ void App::Update( float dt ){
 }
 
 void App::Resize( ){
-    std::cout << "resizing" << std::endl;
     glMatrixMode( GL_PROJECTION );
     glLoadIdentity( );
     gluPerspective( 20, window_width / (float) window_height, 5, 15 );

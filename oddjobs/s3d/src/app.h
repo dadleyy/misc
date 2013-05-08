@@ -1,7 +1,7 @@
 #ifndef _S3D_APP_H
 #define _S3D_APP_H
 
-#define MIN_TIME_DIFF 0.01f
+#define MIN_TIME_DIFF 0.0000001f
 
 #include "includes.h"
 #include "state-manager.h";
