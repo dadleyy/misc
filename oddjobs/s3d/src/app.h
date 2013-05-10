@@ -6,6 +6,7 @@
 #include "includes.h"
 #include "state-manager.h";
 #include "game-state.h";
+#include "menu-state.h";
 
 class App {
     

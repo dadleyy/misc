@@ -4,4 +4,9 @@
 #include <iostream>
 #include <GLUT/glut.h>
 
+struct Mouse {
+    int x, y;
+    bool down;
+};
+
 #endif

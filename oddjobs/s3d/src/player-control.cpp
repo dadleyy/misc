@@ -2,7 +2,6 @@
 #include "game-object.h"
 #include "transform.h"
 
-
 void PlayerControl::Init( GameObject* go ){
     ok = false;
     transform = go->GetComponent<Transformer>( &ok ); 

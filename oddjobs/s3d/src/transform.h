@@ -11,12 +11,13 @@ extern bool keystates[256];
 class Transformer : public Component {
     
 public:
-    Transformer( SVector3 initialposition, SVector3 initialrotation );
+    Transformer( SVector3 initialposition, SVector3 initialrotation, SVector3 initialscale );
     void Init( GameObject* go );
     void Update( float dt );
     
     SVector3 position;
     SVector3 rotation;
+    SVector3 scale;
     
 private:
 

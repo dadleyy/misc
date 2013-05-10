@@ -4,6 +4,10 @@ StateManager::StateManager( ){ }
 
 void StateManager::AddState( State* state ){
     states.push( state ); 
+    state->stateman = this;
+}
+void StateManager::PopState( ) {
+    states.pop( );
 }
 
 void StateManager::Update( float dt ){ 
@@ -11,6 +15,8 @@ void StateManager::Update( float dt ){
 }
 
 void StateManager::Draw( ){
+    // clear out the buffer
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); 
     states.front( )->Draw( );     
 }
 

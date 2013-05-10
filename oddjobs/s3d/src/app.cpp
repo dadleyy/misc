@@ -2,6 +2,7 @@
 
 App* instance;
 bool keystates[256];
+Mouse mouse;
 
 void G_Update( ){
     instance->c_time = time(0) * 1000.0f;
@@ -25,9 +26,19 @@ void G_Keyup( unsigned char key, int x, int y ){
     keystates[ (int)key ] = false;
 }
 
+void G_Mouseman( int button, int state, int x, int y ){
+    mouse.down = state;
+}
+
+void G_Mousemove( int x, int y ){
+    mouse.x = x;
+    mouse.y = y;
+}
+
 // Constructor
 App::App( int argc, char* argv[ ] ) : window_height(600), window_width(800), l_time(0), c_time(0) {
     // add the states
+    statemanager.AddState( new MenuState( ) );
     statemanager.AddState( new GameState( ) );
     // set up all the glut functions
     glutInit( &argc, argv );
@@ -50,6 +61,9 @@ int App::Run( ){
     glutReshapeFunc( G_Resize );
     glutKeyboardFunc( G_Keyman );
     glutKeyboardUpFunc( G_Keyup );
+    glutMouseFunc( G_Mouseman );
+    glutMotionFunc( G_Mousemove );
+    glutPassiveMotionFunc( G_Mousemove );
     Resize( );
     //glutIdleFunc( G_Update );
     glutMainLoop( );

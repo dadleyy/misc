@@ -17,6 +17,8 @@ public:
     void Draw( );
     void AddState( State* state );
     
+    void PopState( );
+    
 private:
     std::queue<State*> states; 
 

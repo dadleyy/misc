@@ -2,9 +2,14 @@
 #include "game-object.h"
 #include "transform.h"
 
-void Drawable::Init( GameObject* go ) {
+Drawable::Drawable( ) : drawmode(GL_QUADS){ 
+    
+}
+Drawable::~Drawable( ){ }
+
+void Drawable::Init( GameObject* go ){
     ok = false;
-    transform = go->GetComponent<Transformer>( &ok );   
+    transform = go->GetComponent<Transformer>( &ok );  
 }
 
 void Drawable::Draw( ){
@@ -17,37 +22,13 @@ void Drawable::Draw( ){
     glRotatef( transform->rotation.z, 0, 1, 0 );
     
     // quads
-    glBegin(GL_QUADS);
-    // start making verts
-    glColor3f(0, 0, 0); glVertex3f(-1, -1, -1);
-    glColor3f(0, 0, 1); glVertex3f(-1, -1,  1);
-    glColor3f(0, 1, 1); glVertex3f(-1,  1,  1);
-    glColor3f(0, 1, 0); glVertex3f(-1,  1, -1);
+    glBegin( drawmode );
     
-    glColor3f(1, 0, 0); glVertex3f( 1, -1, -1);
-    glColor3f(1, 0, 1); glVertex3f( 1, -1,  1);
-    glColor3f(1, 1, 1); glVertex3f( 1,  1,  1);
-    glColor3f(1, 1, 0); glVertex3f( 1,  1, -1);
-    
-    glColor3f(0, 0, 0); glVertex3f(-1, -1, -1);
-    glColor3f(0, 0, 1); glVertex3f(-1, -1,  1);
-    glColor3f(1, 0, 1); glVertex3f( 1, -1,  1);
-    glColor3f(1, 0, 0); glVertex3f( 1, -1, -1);
-    
-    glColor3f(0, 1, 0); glVertex3f(-1,  1, -1);
-    glColor3f(0, 1, 1); glVertex3f(-1,  1,  1);
-    glColor3f(1, 1, 1); glVertex3f( 1,  1,  1);
-    glColor3f(1, 1, 0); glVertex3f( 1,  1, -1);
-    
-    glColor3f(0, 0, 0); glVertex3f(-1, -1, -1);
-    glColor3f(0, 1, 0); glVertex3f(-1,  1, -1);
-    glColor3f(1, 1, 0); glVertex3f( 1,  1, -1);
-    glColor3f(1, 0, 0); glVertex3f( 1, -1, -1);
-    
-    glColor3f(0, 0, 1); glVertex3f(-1, -1,  1);
-    glColor3f(0, 1, 1); glVertex3f(-1,  1,  1);
-    glColor3f(1, 1, 1); glVertex3f( 1,  1,  1);
-    glColor3f(1, 0, 1); glVertex3f( 1, -1,  1);
+    for( int i = 0; i < mesh.verts.size( ); i++ ){
+        SVector3 v = mesh.verts.at( i );
+        glColor3f( 1, 0.5, 0); 
+        glVertex3f( v.x * transform->scale.x, v.y * transform->scale.y, v.z * transform->scale.z);
+    }
     
     // finished passing vers
     glEnd( );

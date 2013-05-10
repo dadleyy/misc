@@ -3,7 +3,6 @@
 
 #include "includes.h"
 #include "state.h"
-#include <sstream>
 
 class Player;
 
@@ -17,8 +16,8 @@ public:
     void Draw( );
     
 private:
-    float alpha;
     Player* player;
+    
 };
 
 #endif
