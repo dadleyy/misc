@@ -10,7 +10,7 @@ Player::Player( ){
     
     drawable = new Drawable( );
     controller = new PlayerControl( );
-    transform = new Transformer( SVector3(0,0,0) );
+    transform = new Transformer( SVector3(0,0,-10), SVector3(0,0,0) );
     physics = new PhysicsComponent( );
     
     components.push_back( drawable );

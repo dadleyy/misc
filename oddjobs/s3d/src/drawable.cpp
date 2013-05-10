@@ -4,12 +4,18 @@
 
 void Drawable::Init( GameObject* go ) {
     ok = false;
-    transform = go->GetComponent<Transformer>( &ok );
-    
+    transform = go->GetComponent<Transformer>( &ok );   
 }
 
 void Drawable::Draw( ){
-
+    
+    glLoadIdentity( );
+    
+    glTranslatef( transform->position.x, transform->position.y, transform->position.z );
+    glRotatef( transform->rotation.x, 1, 0, 0 );
+    glRotatef( transform->rotation.y, 0, 1, 0 );
+    glRotatef( transform->rotation.z, 0, 1, 0 );
+    
     // quads
     glBegin(GL_QUADS);
     // start making verts
