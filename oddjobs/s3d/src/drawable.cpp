@@ -1,10 +1,15 @@
 #include "drawable.h"
+#include "game-object.h"
+#include "transform.h"
 
-Drawable::Drawable( ){ }
-
-void Drawable::Update( float dt ){ }
+void Drawable::Init( GameObject* go ) {
+    ok = false;
+    transform = go->GetComponent<Transformer>( &ok );
+    
+}
 
 void Drawable::Draw( ){
+
     // quads
     glBegin(GL_QUADS);
     // start making verts
@@ -43,5 +48,3 @@ void Drawable::Draw( ){
     // render the glu data
     glFlush( );
 }
-
-Drawable::~Drawable( ){ }

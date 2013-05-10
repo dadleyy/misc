@@ -3,12 +3,14 @@
 #include "player-control.h"
 #include "transform.h"
 #include "physics-component.h"
+#include "s3math.h"
 
 Player::Player( ){ 
     std::cout << "making the player" << std::endl;
+    
     drawable = new Drawable( );
     controller = new PlayerControl( );
-    transform = new Transformer( );
+    transform = new Transformer( SVector3(0,0,0) );
     physics = new PhysicsComponent( );
     
     components.push_back( drawable );

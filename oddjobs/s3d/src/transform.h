@@ -3,6 +3,7 @@
 
 #include "includes.h"
 #include "component.h"
+#include "s3math.h"
 
 class GameObject;
 extern bool keystates[256];
@@ -10,8 +11,15 @@ extern bool keystates[256];
 class Transformer : public Component {
     
 public:
+
+    Transformer( SVector3 initialposition );
     void Init( GameObject* go );
     void Update( float dt );
+    
+    SVector3 position;
+    
+private:
+
 };
 
 #endif

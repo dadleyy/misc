@@ -9,6 +9,10 @@ public:
     virtual void Init(GameObject* go);
     virtual void Update( float dt );
     void Draw( );
+
+protected:
+    bool ok;
+
 };
 
 #endif
