@@ -1,2 +1,4 @@
 
 *.o
+
+ruby/railsapp/config/database.yml
