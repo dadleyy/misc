@@ -1,5 +1,6 @@
 #include "utils/utils.h"
 
+// test
 int main ( ) {
     
     cout << "Program #1 - Memory tests" << endl;

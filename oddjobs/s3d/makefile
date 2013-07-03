@@ -8,7 +8,7 @@ OBJS := $(addprefix obj/,$(notdir $(SRCS:.cpp=.o)))
 all: $(PROGRAM)
 
 obj/%.o: src/%.cpp src/%.h
-	g++ -o $@ -c $<
+	$(CC) -o $@ -c $<
 
 $(PROGRAM): $(OBJS)
 	$(CC) $(FW) -o $(PROGRAM) src/main.cpp $(OBJS)

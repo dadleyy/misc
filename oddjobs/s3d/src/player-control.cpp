@@ -1,6 +1,8 @@
 #include "player-control.h"
 #include "game-object.h"
 #include "transform.h"
+#include "camera.h"
+extern Camera camera;
 
 void PlayerControl::Init( GameObject* go ){
     ok = false;
@@ -10,12 +12,13 @@ void PlayerControl::Init( GameObject* go ){
 void PlayerControl::Update( float dt ){
 
     if( keystates[100] )
-        transform->rotation.y += 0.21f;
+        transform->rotation.x += 0.11f;
     if( keystates[97] )
-        transform->rotation.y -= 0.21f;
+        transform->rotation.x -= 0.11f;
     if( keystates[119] )
-        transform->rotation.x -= 0.21f;
+        transform->position.z -= 0.11f;
     if( keystates[115] )
-        transform->rotation.x += 0.21f;
+        transform->position.z += 0.11f;
 
+    camera.Follow( transform );
 }

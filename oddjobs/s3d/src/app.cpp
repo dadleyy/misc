@@ -3,6 +3,7 @@
 App* instance;
 bool keystates[256];
 Mouse mouse;
+Camera camera;
 
 void G_Update( ){
     instance->c_time = time(0) * 1000.0f;
@@ -37,9 +38,12 @@ void G_Mousemove( int x, int y ){
 
 // Constructor
 App::App( int argc, char* argv[ ] ) : window_height(600), window_width(800), l_time(0), c_time(0) {
+    
+    resourcemgr.LoadShader("something");
+
     // add the states
-    statemanager.AddState( new MenuState( ) );
-    statemanager.AddState( new GameState( ) );
+    statemgr.AddState( new MenuState( ) );
+    statemgr.AddState( new GameState( ) );
     // set up all the glut functions
     glutInit( &argc, argv );
     glutInitDisplayMode( GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH );
@@ -72,19 +76,15 @@ int App::Run( ){
 
 void App::Update( float dt ){
     // update
-    statemanager.Update( dt );
-    statemanager.Draw( );
+    camera.Update( dt );
+    statemgr.Update( dt );
+    statemgr.Draw( );
     glutSwapBuffers( );
     glutPostRedisplay( );
 }
 
 void App::Resize( ){
-    glMatrixMode( GL_PROJECTION );
-    glLoadIdentity( );
-    gluPerspective( 20, window_width / (float) window_height, 5, 15 );
-    glViewport( 0, 0, window_width, window_height );
-    glMatrixMode( GL_MODELVIEW );
-    glutPostRedisplay( );
+    camera.SetWindow( window_width, window_height );
 }
 
 // destructor

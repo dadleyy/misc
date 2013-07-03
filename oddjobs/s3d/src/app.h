@@ -5,8 +5,10 @@
 
 #include "includes.h"
 #include "state-manager.h";
+#include "resource-manager.h";
 #include "game-state.h";
 #include "menu-state.h";
+#include "camera.h"
 
 class App {
     
@@ -27,7 +29,8 @@ public:
 private:
     int window_height;
     int window_width;
-    StateManager statemanager;
+    StateManager statemgr;
+    ResourceManager resourcemgr;
 };
 
 #endif
