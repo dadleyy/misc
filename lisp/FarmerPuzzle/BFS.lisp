@@ -21,7 +21,7 @@
 		((null state) nil)
         	(t (cons 
 			state 
-			(build-solution (get-parent (trace-lineage state *closed*)))
+			(trace-solution (get-parent (trace-lineage state *closed*)))
 		))
 	)
 )
